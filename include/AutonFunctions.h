@@ -4,7 +4,7 @@ variables declared here will receive global scope.
 All motors and objects used here will have brake modes
 set according to AutonBrakeMode.h*/
 #include "main.h"
-//void forward(float targetDistance, int maxSpeed = 170);
+
 
 int setVoltageByPercent(int percent){
     /*
@@ -17,14 +17,15 @@ int setVoltageByPercent(int percent){
 void forward(){
     autonTimer.placeMark();
 
-    std::vector<float> plotterPass;
+    std::vector<double> plotterPass;
 
     printf("%s \n", "{START}");
     pros::delay(1000);
 
     while(autonTimer.getDtFromMark().convert(second) < 10.0){
-        plotterPass = {1.0,2.0,3.0,4.0,5.0};
+        plotterPass = {autonTimer.getDtFromMark().convert(second), 2.0, 5.0};
         plotterPrint(plotterPass);
+        pros::delay(20);
     }
 
     printf("%s \n", "{STOP}");

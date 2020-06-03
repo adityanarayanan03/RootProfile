@@ -1,6 +1,6 @@
 #include "main.h"
 
-void plotterPrint(std::vector<float> elements){
+void plotterPrint(std::vector<double> elements){
     /*
     Takes vector of elements to print to plotter
     {x_data, y1, y2, etc.}
@@ -12,5 +12,5 @@ void plotterPrint(std::vector<float> elements){
             printf("%s", ",");
         }
     }
-    printf("%s", "}");
+    printf("%s \n", "}");
 }
