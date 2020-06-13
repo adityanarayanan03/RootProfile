@@ -14,3 +14,8 @@ void plotterPrint(std::vector<double> elements){
     }
     printf("%s \n", "}");
 }
+
+void arcade(MotorGroup left, MotorGroup right, double joyVert, double joyHoriz){
+    left.moveVoltage(12000*(joyVert + joyHoriz));
+    right.moveVoltage(12000*(joyVert - joyHoriz));
+}

@@ -14,13 +14,15 @@ void competition_initialize() {}
 void autonomous()
 {
 //To edit brake modes, edit only th .h files. Do not edit straightaway here.
-#include "AutonBrakeMode.h"
-	forward();
+	#include "AutonBrakeMode.h"
+	PIDSeconds(.5);
 }
 
 void opcontrol()
 {
-//To edit brake modes, edit in the .h files. Do not edit straightaway here.
-#include "UserBrakeMode.h"
-	chassis.moveVoltage(0);
+	Controller controller;
+	//To edit brake modes, edit in the .h files. Do not edit straightaway here.
+	#include "UserBrakeMode.h"
+	printf("%s \n", "{STOP}");
+	pros::delay(1000);
 }
